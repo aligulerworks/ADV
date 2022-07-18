@@ -437,13 +437,13 @@ img {
 .works-card:hover {
    z-index: 2;
    backdrop-filter: blur(1rem);
-   -webkit-backdrop-filter: blur(1rem);
+   -webkit-backdrop-filter: blur(0.3rem);
    opacity: 1;
    background-color: rgba(var(--shade), 0.55);
    box-shadow: var(--shadow-box2);
    /* min-width: 100.5%;
    min-height: 100.5%; */
-   transform: scale(111%);
+   transform: scale(102%);
    transition: transform linear 333ms, background-color linear 333ms, backdrop-filter linear 333ms, opacity linear 333ms;
 
 }
