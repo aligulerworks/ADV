@@ -7,7 +7,7 @@
    font-weight: 200;
    text-decoration: none;
 
-   font-size: 1.88vw;
+   font-size: 1.55vw;
 
    /* COLOURS - RE-CREATE */
 
@@ -35,10 +35,7 @@
 
 
 
-   --green-08: rgba(0, 210, 84, 0.08);
-   --green-18: rgba(0, 210, 84, 0.18);
-   --green-44: rgba(0, 210, 84, 0.44);
-   --green: rgba(0, 210, 84, 1);
+   --green: 0, 210, 84;
 
    --orange: rgba(255, 153, 70, 1);
    --orange-88: rgba(255, 153, 70, 0.88);
@@ -67,13 +64,14 @@
 
 body {
 
-
-
    background: var(--back-color);
    color: var(--color);
    margin: 0rem;
    width: 100%;
+   max-width: 100%;
+   overflow-x: hidden;
    min-height: 100vh;
+   height: 100%;
    display: grid;
    justify-items: center;
    padding: 0rem;
@@ -110,33 +108,36 @@ p>a {
 }
 
 p>a:hover {
-   background: linear-gradient(0deg, transparent 20%, var(--green) 20%, var(--green) 50%, transparent 50%);
+   background: linear-gradient(0deg, transparent 20%, rgba(var(--green),1) 20%, var(--green) 50%, transparent 50%);
 
 }
 
-p>a:hover[target="_blank"] {
-   background: linear-gradient(0deg, transparent 20%, var(--green-44) 20%, var(--green-44) 50%, transparent 50%);
+h3>a:hover[target="_blank"] {
+   background: linear-gradient(0deg, transparent 10%, rgba(var(--green),0.44) 10%, rgba(var(--green), 0.44) 20%, transparent 20%);
 
 }
 
-p>a:hover[target="_blank"]::after {
-   content: ">";
+h3>a:hover[target="_blank"]::after {
+   content: "->";
    position: absolute;
    text-align: center;
    font-weight: 700;
-   font-size: 0.6rem;
-   line-height: 0.53rem;
-   left: 1rem;
-   bottom: 0.8rem;
+   font-size: 0.9rem;
+   line-height: 0rem;
+   /* left: -1rem;
+   bottom: 0.8rem; */
    color: var(--green);
-   background-color: rgba(var(--shade), 0.88);
+   background-color: rgba(var(--green), 0.88);
 
    border-radius: 50%;
-   padding: 0.14rem;
-   width: 0.5rem;
-   height: 0.5rem;
+   padding: 0.22rem 0.14rem 0.07rem 0.14rem;
+   width: 0.36rem;
+   height: 0.36rem;
    overflow: hidden;
    transform: rotate(-30deg);
+   z-index: 20;
+
+   margin: auto;
 
 
 
@@ -157,10 +158,10 @@ p {
 
 
 h1 {
+   font-size: 2rem;
+   font-weight: 200;
    opacity: 0;
    position: absolute;
-   font-weight: 200;
-   font-size: 2rem;
    line-height: auto;
    display: grid;
    justify-content: center;
@@ -174,13 +175,13 @@ h1 {
 }
 
 h2 {
-   font-size: 1.2rem;
+   font-size: 1.5rem;
    margin: 0;
    font-weight: 200;
 }
 
 h3 {
-   font-size: 1.1rem;
+   font-size: 1.3rem;
    font-weight: 200;
    margin: 0;
 }
@@ -188,7 +189,7 @@ h3 {
 h4,
 h5,
 h6 {
-   font-size: 1rem;
+   font-size: 1.1rem;
    font-weight: 300;
    /* text-transform: uppercase; */
    margin: 0;
@@ -199,14 +200,21 @@ h6 {
 /* buttons */
 button {
    font-family: 'Inconsolata', monospace;
+   font-size: 0.8rem;
+   font-weight: 400;
+   text-align: center;
+   text-transform: uppercase;
+   width: 4rem;
+   height: 4rem;
 
-   width: 5rem;
-   height: 5rem;
+   margin: 0;
+   padding: 0;
+   /* padding: 0.05rem .7rem 0.12rem .7rem; */
+
    border-radius: 1px;
    border: 0.5px solid rgba(var(--shade), 0.11);
    border-radius: 50%;
    box-sizing: border-box;
-   padding: 0.05rem .7rem 0.12rem .7rem;
    filter: drop-shadow(var(--dshadow-button-right)) drop-shadow(var(--dshadow-button-left));
    background-color: rgba(var(--shade), 0.22);
    cursor: pointer;
@@ -225,11 +233,8 @@ button:hover {
 }
 
 button a {
-   font-family: inherit;
-   font-size: 0.8rem;
-   text-transform: uppercase;
-   font-weight: 400;
-
+   margin: 0;
+   padding: 0;
 }
 
 button:active {
@@ -288,9 +293,9 @@ img {
    content: "";
    position: absolute;
    justify-self: center;
-   top: -7rem;
-   width: 56%;
-   height: 16rem;
+   top: -14rem;
+   width: 166%;
+   height: 24rem;
    /* background: linear-gradient(0deg, rgba(255, 255, 255, 0) 7%, var(--whitest-88)); */
 
    background: radial-gradient(var(--back-color) 0%, rgba(255, 255, 255, 0) 42%);
@@ -353,10 +358,10 @@ img {
    z-index: -1;
    top: 0;
    left: 0;
-   height: 100vh;
+   height: 100%;
    width: 100%;
    object-fit: cover;
-   opacity: 0.44;
+   opacity: 0.33;
 }
 
 .background-image {
@@ -389,9 +394,9 @@ img {
 
 .main-works {
    gap: 0.1vmax;
-   grid-template-columns: 1fr 1fr 1fr;
-   grid-template-rows: 1fr 1fr 1fr;
-   margin: -18vmax 0 -18vmax 0;
+   grid-template-columns: 19.98vmax 19.98vmax 19.98vmax 19.98vmax 19.98vmax;
+   grid-template-rows: 19.98vmax 19.98vmax 19.98vmax 19.98vmax 19.98vmax;
+   margin: -10vmax 0 -10vmax 0;
    padding: 0;
 
 }
@@ -413,10 +418,10 @@ img {
    margin: 0;
    padding: 1rem;
 
-   background-color: rgba(var(--shade), 0.33);
+   background-color: rgba(var(--shade), 0.22);
    /* border: 0.5px solid transparent; */
    /* box-shadow: var(--shadow-box1); */
-   border: 0.5px solid rgba(var(--shade), 0.55);
+   border: 0.4px solid rgba(var(--shade), 0.44);
    /* cursor: pointer; */
    backdrop-filter: blur(0px);
    -webkit-backdrop-filter: blur(0rem);
@@ -426,14 +431,14 @@ img {
    position: relative;
 
    transform: scale(100%);
-   transition: transform linear 1444ms, background-color linear 1444ms, backdrop-filter linear 1444ms, opacity linear 1444ms;
+   transition: transform linear 1555ms, background-color linear 1555ms, backdrop-filter linear 1555ms, opacity linear 1555ms;
 
 }
 
 
 .works-card {
-   width: 33.2vmax;
-   height: 33.2vmax;
+   width: 100%;
+   height: 100%;
 }
 
 
@@ -448,7 +453,7 @@ img {
    /* min-width: 100.5%;
    min-height: 100.5%; */
    transform: scale(102%);
-   transition: transform linear 333ms, background-color linear 333ms, backdrop-filter linear 333ms, opacity linear 333ms;
+   transition: transform linear 222ms, background-color linear 222ms, backdrop-filter linear 222ms, opacity linear 222ms;
 
 }
 
@@ -526,14 +531,14 @@ img {
 
 .works-card button {
    margin: none;
-   height: 8vmax;
-   width: 8vmax;
+   height: 5vmax;
+   width: 5vmax;
    border-radius: 50%;
    display: grid;
    align-content: center;
    padding: 0;
    box-sizing: border-box;
-   font-size: 0.8rem;
+   font-size: 0.7rem;
    z-index: 3;
 
    align-self: end;
@@ -798,7 +803,7 @@ footer {
       content: '';
       width: 200%;
       overflow: hidden;
-      background: radial-gradient rgba(var(--shade), 0.44) 0%, rgba(255, 255, 255, 0) 42%);
+      background: radial-gradient rgba(var(--shade), 0.44) 0%, rgba(var(--shade), 0) 42%;
 
 
    }
@@ -824,7 +829,7 @@ footer {
       font-weight: 700;
    }
 
-   .works-card:first-child {
+   .mobile-hidden {
       display: none;
    }
 
@@ -879,6 +884,8 @@ footer {
    height: 1.44rem;
    border-radius: 50%;
    z-index: 20;
+
+   filter: drop-shadow(0px 2px 8px rgba(var(--color), 0.99));
 
    cursor: pointer;
 }
