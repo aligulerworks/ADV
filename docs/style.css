@@ -3,7 +3,9 @@
 
    /* VAR(S) */
    /* fonts */
-   font-family: 'Cormorant Garamond', serif;
+
+   --font-content: 'Cormorant Garamond', serif;
+   --font-button: 'Inconsolata', sans-serif;
    font-weight: 200;
    text-decoration: none;
 
@@ -63,7 +65,7 @@
 }
 
 body {
-
+   font-family: var(--font-content);
    background: var(--back-color);
    color: var(--color);
    margin: 0rem;
@@ -101,47 +103,63 @@ a:hover {
 }
 
 /* PARAGRAPH LINKS  */
-
+small>a,
 p>a {
-   font-weight: 400;
    position: relative;
+   text-shadow: 0 0.05rem 0.2rem rgba(var(--green), 0.55);
 }
 
-p>a:hover {
-   background: linear-gradient(0deg, transparent 20%, rgba(var(--green),1) 20%, var(--green) 50%, transparent 50%);
+p>a:hover {   
+   background: linear-gradient(0deg, transparent 14%, rgba(var(--green),0.44) 14%, rgba(var(--green), 0.44) 20%, transparent 20%);
 
 }
 
 h3>a:hover[target="_blank"] {
-   background: linear-gradient(0deg, transparent 10%, rgba(var(--green),0.44) 10%, rgba(var(--green), 0.44) 20%, transparent 20%);
+   background: linear-gradient(0deg, transparent 14%, rgba(var(--green),0.44) 14%, rgba(var(--green), 0.44) 20%, transparent 20%);
 
 }
 
+.external:hover button::after,
+.works-card>a:hover[target="_blank"] button::after,
 h3>a:hover[target="_blank"]::after {
    content: "->";
    position: absolute;
    text-align: center;
-   font-weight: 700;
-   font-size: 0.9rem;
-   line-height: 0rem;
+   font-weight: 300;
+   font-size: 0.88rem;
+   font-family: var(--font-button);
+   letter-spacing: -1ch;
+   text-indent: -0.6ch;
+   line-height: 1.4ch;
    /* left: -1rem;
    bottom: 0.8rem; */
-   color: var(--green);
-   background-color: rgba(var(--green), 0.88);
+   color: rgba(var(--color), 0.77);
+   background-color: rgba(var(--green), 0.55);
 
    border-radius: 50%;
-   padding: 0.22rem 0.14rem 0.07rem 0.14rem;
-   width: 0.36rem;
-   height: 0.36rem;
+   width: 0.66rem;
+   height: 0.66rem;
    overflow: hidden;
-   transform: rotate(-30deg);
+   transform: rotate(-44deg) translate(0rem, -0.15rem);
    z-index: 20;
+/* 
+   display: grid;
+   place-items: center;
+   place-content: center;    */
+}
 
-   margin: auto;
-
-
+.external:hover button::after,
+.works-card>a:hover[target="_blank"] button::after{
+   transform: rotate(-44deg) translate(0.2rem, -0.15rem);
+   right: 0;
 
 }
+
+.external button:hover,
+.works-card>a:hover[target="_blank"] button:hover {
+   border: 0.5px solid rgba(var(--green), 1);
+}
+
 
 title {
    display: none;
@@ -156,7 +174,14 @@ p {
    margin: 0;
 }
 
+small {
+   font-size: 0.77rem;
+   display: inline-block;
+}
 
+em {
+   font-size: inherit;
+}
 h1 {
    font-size: 2rem;
    font-weight: 200;
@@ -199,19 +224,19 @@ h6 {
 
 /* buttons */
 button {
-   font-family: 'Inconsolata', monospace;
-   font-size: 0.8rem;
+   font-family: var(--font-button);
+   font-size: 0.7rem;
    font-weight: 400;
    text-align: center;
    text-transform: uppercase;
-   width: 4rem;
-   height: 4rem;
+   width: 3.6rem;
+   height: 3.6rem;
 
    margin: 0;
    padding: 0;
    /* padding: 0.05rem .7rem 0.12rem .7rem; */
 
-   border-radius: 1px;
+   border-radius: 50%;
    border: 0.5px solid rgba(var(--shade), 0.11);
    border-radius: 50%;
    box-sizing: border-box;
@@ -222,6 +247,8 @@ button {
    color: inherit;
    backdrop-filter: blur(1rem);
 
+   display: grid;
+   align-content: center;
 
 
 
@@ -530,18 +557,9 @@ img {
 }
 
 .works-card button {
-   margin: none;
-   height: 5vmax;
-   width: 5vmax;
-   border-radius: 50%;
-   display: grid;
-   align-content: center;
-   padding: 0;
-   box-sizing: border-box;
-   font-size: 0.7rem;
-   z-index: 3;
 
-   align-self: end;
+
+   /* align-self: end; */
 }
 
 
@@ -704,6 +722,7 @@ img {
    padding: 0;
 }
 
+.read-block small,
 .read-block {
    margin: 0;
    text-indent: 1rem;
@@ -873,28 +892,59 @@ footer {
 
 /* LIGHT SWITCH */
 
-.sprites {}
-
-#light-switch {
-   display: block;
-   position: absolute;
+.sprites {
+   position: fixed;
    right: 1rem;
    top: 1rem;
+   
+   border: lightblue 1px solid;
+   display: grid;
+   width: auto;
+   height: max-content;
+   gap: 0.4rem;
+   padding: 0.1rem;
+
+   z-index: 20;
+
+   
+}
+
+#back-switch, #light-switch {
    width: 1.44rem;
    height: 1.44rem;
    border-radius: 50%;
-   z-index: 20;
-
    filter: drop-shadow(0px 2px 8px rgba(var(--color), 0.99));
-
    cursor: pointer;
+}
+/* Back Switch */
+#back-switch {
+   background: blue;
+
+}
+
+
+/* Light Switch */
+#light-switch {
+   display: block;
+   position: relative;
+
+
 }
 
 .moon {
    background-color: transparent;
-   box-shadow: inset -0.2rem -0.2rem 0 0.1rem white;
+   box-shadow: inset -0.2rem -0.2rem 0 0.1rem var(--color);
 }
 
 .sun {
-   background-color: white;
+   background-color: var(--color);
+}
+
+
+
+
+/* Background Images & Transitions */
+
+.background-image {
+   transition: opacity 1s ease;
 }
