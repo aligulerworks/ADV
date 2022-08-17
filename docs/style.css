@@ -106,7 +106,7 @@ a:hover {
 small>a,
 p>a {
    position: relative;
-   text-shadow: 0 0.05rem 0.2rem rgba(var(--green), 0.55);
+   text-shadow: 0 0.05rem 0.2rem rgba(var(--green), 0.88);
 }
 
 p>a:hover {   
@@ -897,7 +897,6 @@ footer {
    right: 1rem;
    top: 1rem;
    
-   border: lightblue 1px solid;
    display: grid;
    width: auto;
    height: max-content;
@@ -908,6 +907,47 @@ footer {
 
    
 }
+
+.tooltip {
+   font-family: var(--font-button);
+   font-size: 0.6rem;
+   text-align: left;
+   position: absolute;
+   right: 1rem;
+   bottom: 0.7rem;
+   width: 0;
+   height: 1.2rem;
+   overflow: hidden;
+   margin: 0;
+   padding: 0;
+   
+   display: flex;
+   justify-items: center;
+   justify-content: center;
+   
+   border-bottom: 0.5px solid var(--color);
+   border-radius: 0 0 0 0.4rem;
+   line-height: 1.4rem;
+   
+   z-index: -1;
+
+
+
+}
+
+#light-switch:hover > .tooltip,
+#back-switch:hover > .tooltip{
+   width: max-content;
+   
+   transition: all 500ms ease-in-out;
+
+
+   padding: 0 1.6rem 0 .4rem;
+
+
+
+}
+
 
 #back-switch, #light-switch {
    width: 1.44rem;
