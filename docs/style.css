@@ -35,10 +35,7 @@
 
 
 
-   --green-08: rgba(0, 210, 84, 0.08);
-   --green-18: rgba(0, 210, 84, 0.18);
-   --green-44: rgba(0, 210, 84, 0.44);
-   --green: rgba(0, 210, 84, 1);
+   --green: 0, 210, 84;
 
    --orange: rgba(255, 153, 70, 1);
    --orange-88: rgba(255, 153, 70, 0.88);
@@ -111,33 +108,36 @@ p>a {
 }
 
 p>a:hover {
-   background: linear-gradient(0deg, transparent 20%, var(--green) 20%, var(--green) 50%, transparent 50%);
+   background: linear-gradient(0deg, transparent 20%, rgba(var(--green),1) 20%, var(--green) 50%, transparent 50%);
 
 }
 
-p>a:hover[target="_blank"] {
-   background: linear-gradient(0deg, transparent 20%, var(--green-44) 20%, var(--green-44) 50%, transparent 50%);
+h3>a:hover[target="_blank"] {
+   background: linear-gradient(0deg, transparent 10%, rgba(var(--green),0.44) 10%, rgba(var(--green), 0.44) 20%, transparent 20%);
 
 }
 
-p>a:hover[target="_blank"]::after {
-   content: ">";
+h3>a:hover[target="_blank"]::after {
+   content: "->";
    position: absolute;
    text-align: center;
    font-weight: 700;
-   font-size: 0.6rem;
-   line-height: 0.53rem;
-   left: 1rem;
-   bottom: 0.8rem;
+   font-size: 0.9rem;
+   line-height: 0rem;
+   /* left: -1rem;
+   bottom: 0.8rem; */
    color: var(--green);
-   background-color: rgba(var(--shade), 0.88);
+   background-color: rgba(var(--green), 0.88);
 
    border-radius: 50%;
-   padding: 0.14rem;
-   width: 0.5rem;
-   height: 0.5rem;
+   padding: 0.22rem 0.14rem 0.07rem 0.14rem;
+   width: 0.36rem;
+   height: 0.36rem;
    overflow: hidden;
    transform: rotate(-30deg);
+   z-index: 20;
+
+   margin: auto;
 
 
 
@@ -361,7 +361,7 @@ img {
    height: 100%;
    width: 100%;
    object-fit: cover;
-   opacity: 0.44;
+   opacity: 0.33;
 }
 
 .background-image {
@@ -421,7 +421,7 @@ img {
    background-color: rgba(var(--shade), 0.22);
    /* border: 0.5px solid transparent; */
    /* box-shadow: var(--shadow-box1); */
-   border: 1px solid rgba(var(--shade), 0.44);
+   border: 0.4px solid rgba(var(--shade), 0.44);
    /* cursor: pointer; */
    backdrop-filter: blur(0px);
    -webkit-backdrop-filter: blur(0rem);
@@ -431,7 +431,7 @@ img {
    position: relative;
 
    transform: scale(100%);
-   transition: transform linear 1444ms, background-color linear 1444ms, backdrop-filter linear 1444ms, opacity linear 1444ms;
+   transition: transform linear 1555ms, background-color linear 1555ms, backdrop-filter linear 1555ms, opacity linear 1555ms;
 
 }
 
