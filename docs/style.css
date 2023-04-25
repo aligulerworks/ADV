@@ -35,19 +35,19 @@
   --darker: rgba(0, 0, 0, 0.11);
   --darkest: rgba(0, 0, 0, 0.88);
 
-  /* VARIABLES RE-VISITED */
-  /* defaults */
-  /* --shade: 255, 255, 255; */
-
   /* colors */
   --black: rgba(0, 0, 0, 0.88);
   --white: rgba(255, 255, 255, 0.88);
+
+  /* transitions */
+
+  --trans-btn: ease-in 200ms;
 }
 
 body {
   font-family: var(--font-content);
-  background: var(--back-color);
-  color: var(--color);
+  background: rgba(var(--back-color), 1);
+  color: rgba(var(--color), 1);
   margin: 0rem;
   width: 100%;
   max-width: 100%;
@@ -73,12 +73,13 @@ body {
 a {
   font-size: inherit;
   text-decoration: none;
-  color: inherit;
-  opacity: 0.88;
+  color: rgba(var(--color), 0.88);
+  transition: color var(--trans-btn);
 }
 
 a:hover {
-  opacity: 1;
+  color: rgba(var(--color), 1);
+  transition: color var(--trans-btn);
 }
 
 .external button:hover,
@@ -165,7 +166,7 @@ button {
   /* padding: 0.05rem .7rem 0.12rem .7rem; */
 
   border-radius: 50%;
-  border: 0.5px solid rgba(var(--shade), 0.11);
+  border: 0.04rem solid rgba(var(--color), 1);
   border-radius: 50%;
   box-sizing: border-box;
   filter: drop-shadow(var(--dshadow-button-right))
@@ -174,15 +175,10 @@ button {
   cursor: pointer;
   z-index: 3;
   color: inherit;
-  backdrop-filter: blur(1rem);
 
   display: grid;
   align-content: center;
-  transition: border 0.3s ease, background-color 0.3s ease;
-}
-
-button:focus,
-button:hover {
+  transition: border var(--trans-btn), background-color var(--trans-btn);
 }
 
 button a {
@@ -198,25 +194,28 @@ button:active {
 /* BUTTONS */
 .btn-ext,
 .btn-int {
-  transition: opacity 200ms ease-in, border 200ms ease-in;
+  transition: opacity var(--trans-btn), border var(--trans-btn),
+    background-color var(--trans-btn);
   position: relative;
-  border: 0.04rem solid rgba(var(--shade), 0);
+  border: 0.04rem solid rgba(var(--color), 0);
 }
 
 .btn-ext:hover,
 .btn-int:hover {
-  transition: opacity 200ms ease-in, border 200ms ease-in;
-  opacity: 1;
+  transition: opacity var(--trans-btn), border var(--trans-btn),
+    background-color var(--trans-btn);
 }
 
 .btn-int:focus,
 .btn-int:hover {
-  border: 0.04rem solid var(--color);
+  border: 0.04rem solid rgba(var(--color), 0.44);
+  background-color: rgba(var(--color), 0.05);
 }
 
 .btn-ext:focus,
 .btn-ext:hover {
   border: 0.5px solid rgba(var(--green), 1);
+  background-color: rgba(var(--green), 0.12);
 }
 
 /* LINKS */
@@ -263,8 +262,8 @@ p > a:hover,
   place-items: center;
   place-content: center;
 
-  top: -0.3rem;
-  right: -0.3rem;
+  top: -0.5rem;
+  right: -0.5rem;
 }
 
 .lnk-ext:hover::after {
@@ -330,7 +329,10 @@ img {
   height: 24rem;
   /* background: linear-gradient(0deg, rgba(255, 255, 255, 0) 7%, var(--whitest-88)); */
 
-  background: radial-gradient(var(--back-color) 0%, rgba(255, 255, 255, 0) 42%);
+  background: radial-gradient(
+    rgba(var(--back-color), 1) 0%,
+    rgba(255, 255, 255, 0) 42%
+  );
   z-index: -1;
 
   backdrop-filter: blur(0deg, 5px 5%, 0px 100%);
@@ -343,7 +345,7 @@ img {
 }
 
 .header-line {
-  border-top: 0.5px solid var(--color);
+  border-top: 0.5px solid rgba(var(--color), 1);
   grid-area: 2 / 2 / 2 / 2;
 }
 
@@ -377,7 +379,7 @@ img {
   border-width: 20px;
   border-left: solid 0.6rem transparent;
   border-right: solid 0.6rem transparent;
-  border-top: solid 0.6rem var(--color);
+  border-top: solid 0.6rem rgba(var(--color), 1);
 }
 
 /* full screen background */
@@ -880,7 +882,7 @@ footer {
   justify-items: center;
   justify-content: center;
 
-  border-bottom: 0.5px solid var(--color);
+  border-bottom: 0.5px solid rgba(var(--color), 1);
   border-radius: 0 0 0 0.4rem;
   line-height: 1.4rem;
 
@@ -917,7 +919,7 @@ footer {
 
 .moon {
   background-color: transparent;
-  box-shadow: inset -0.2rem -0.2rem 0 0.1rem var(--color);
+  box-shadow: inset -0.2rem -0.2rem 0 0.1rem rgba(var(--color), 1);
 }
 
 .sun {

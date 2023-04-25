@@ -2,8 +2,8 @@
 
 // color variabless
 // main front and background colors
-const blackColor = "rgb(33,33,33)";
-const whiteColor = "rgb(211,211,211)";
+const blackColor = "33,33,33";
+const whiteColor = "211,211,211";
 
 // base shade values for rgba appliances
 const shadeBlack = "11,11,11";
