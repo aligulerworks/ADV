@@ -9,6 +9,24 @@ const whiteColor = "211,211,211";
 const shadeBlack = "11,11,11";
 const shadeWhite = "244,244,244";
 
+// PAGE RECOGNIZER
+const body = document.querySelector("body");
+const getPage = document.querySelector("#page");
+const currentPage = () => {
+  if (getPage.classList.contains("home-page")) {
+    console.log(`You're in home page!`);
+  } else {
+    console.log(`Not working!`);
+  }
+};
+
+currentPage();
+// Switcher Variables
+const moon = document.querySelector("#moon");
+const sun = document.querySelector("#sun");
+const lightSwitch = document.querySelector("#light-switch");
+const currentHour = new Date().getHours();
+
 // set the current shader
 
 const docBody = document.querySelector("html");
@@ -21,6 +39,8 @@ let colorNightMode = () => {
   //shades value for rgba appliances
   document.querySelector(":root").style.setProperty("--shade", shadeBlack);
 
+  moon.style.opacity = "1";
+  sun.style.opacity = "0";
   return;
 };
 
@@ -30,41 +50,38 @@ let colorDayMode = () => {
 
   document.querySelector(":root").style.setProperty("--shade", shadeWhite);
 
+  moon.style.opacity = "0";
+  sun.style.opacity = "1";
   return;
 };
 
 //SWITCHERS
 // Light switcher -  according to the hour
-const lightSwitch = document.getElementById("light-switch");
-lightSwitch.addEventListener("click", modeChanger);
-
 const colorMode = () => {
-  const currentHour = new Date().getHours();
   console.log(currentHour);
   if (currentHour < 6 || currentHour > 18) {
     colorNightMode();
-    lightSwitch.classList.add("moon");
-    lightSwitch.classList.remove("sun");
   } else {
     colorDayMode();
-    lightSwitch.classList.add("sun");
-    lightSwitch.classList.remove("moon");
   }
+  lightSwitch.addEventListener("click", modeChanger);
 };
 colorMode();
 
 // Light switcher - manual
 function modeChanger() {
-  if (lightSwitch.classList.contains("sun")) {
+  if (colorMode === "day") {
     colorNightMode();
-    lightSwitch.classList.remove("sun");
-    lightSwitch.classList.add("moon");
+    moon.style.opacity = "1";
+    sun.style.opacity = "0";
     console.log("night");
-  } else if (lightSwitch.classList.contains("moon")) {
+    return "night";
+  } else {
     colorDayMode();
-    lightSwitch.classList.add("sun");
-    lightSwitch.classList.remove("moon");
+    moon.style.opacity = "0";
+    sun.style.opacity = "1";
     console.log("day");
+    return "day";
   }
 }
 
@@ -91,15 +108,14 @@ let backList = {
   "1": "aaron-burden-yzgF-AQt1sQ-unsplash.jpg",
   "2": "annie-spratt--KKLWDAgj2Q-unsplash.jpg",
   "3": "brian-patrick-tagalog-_8hGFBxWD0A-unsplash.jpg",
-  "4": "emmanuel-ben-paul-R_k6kaHhHnY-unsplash.jpg",
-  "5": "frantisek-g-XXuVXLy5gHU-unsplash.jpg",
-  "6": "joe-cooke-MPFiYu__1bA-unsplash.jpg",
-  "7": "martin-sX4lxBWV0-A-unsplash.jpg",
-  "8": "mink-mingle-g0Qdolm3K14-unsplash.jpg",
-  "9": "ritesh-mandaliya-nMvnVSRz-gM-unsplash.jpg",
-  "10": "teemu-paananen-OOE4xAnBhKo-unsplash.jpg",
-  "11": "wesley-tingey-9-OCsKoyQlk-unsplash.jpg",
-  "12": "yiqun-tang-3o7O_6fi7Qc-unsplash.jpg",
+  "4": "frantisek-g-XXuVXLy5gHU-unsplash.jpg",
+  "5": "joe-cooke-MPFiYu__1bA-unsplash.jpg",
+  "6": "martin-sX4lxBWV0-A-unsplash.jpg",
+  "7": "mink-mingle-g0Qdolm3K14-unsplash.jpg",
+  "8": "ritesh-mandaliya-nMvnVSRz-gM-unsplash.jpg",
+  "9": "teemu-paananen-OOE4xAnBhKo-unsplash.jpg",
+  "10": "wesley-tingey-9-OCsKoyQlk-unsplash.jpg",
+  "11": "yiqun-tang-3o7O_6fi7Qc-unsplash.jpg",
 };
 
 backChanger();
