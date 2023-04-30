@@ -129,7 +129,7 @@ function backChanger() {
     return picNumber;
   };
   console.log(`Pick one pic numter is ${pickOne()}`);
-  document.getElementById("back-image").src = `./images/backs-ali/${
+  document.getElementById("back-image").src = `../images/backs-ali/${
     backList[pickOne()]
   }`;
 }
