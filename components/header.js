@@ -7,7 +7,7 @@ headerTemplate.innerHTML = `
 
 <header class="header">
 <div class="header-title">
-  <h2><a href="../index.html">ali del vento</a></h2>
+  <h2><a href="./index.html">ali del vento</a></h2>
 </div>
 <div class="header-line"></div>
 <div class="header-subtitle">
