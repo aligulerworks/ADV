@@ -1,39 +1,21 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="eng">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="./docs/style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,200;0,300;0,500;1,200;1,300;1,500&display=swap"
-    rel="stylesheet" />
+  <!-- head for pages  -->
+  <script src="../components/head-tag-rest.js" type="text/javascript" defer></script>
+  <head-tag-rest></head-tag-rest>
+  <!-- end - head for pages -->
+  <script defer src="../docs/script.js"></script>
+  <script defer src="../components/header.js" type="text/javascript"></script>
 
-  <link rel="icon" type="image/png" href="#" />
+  <link rel="stylesheet" href="../style.css" />
 
-  <script defer src="./docs/script.js"></script>
-
-  <title>ali güler works</title>
 </head>
 
 <body>
-  <!-- HEADER  -->
-  <header class="header">
-    <div class="header-title">
-      <a href="../index.html">
-        <h2>ali güler works</h2>
-      </a>
-    </div>
-    <div class="header-line"></div>
-    <div class="header-subtitle">
-      <h6 class="header-subtitle-left">Private</h6>
-      <div class="header-sub-triangle"></div>
-      <h6 class="header-subtitle-right">Design</h6>
-    </div>
-  </header>
+  <header-component class="disappear"></header-component>
+
 
   <h1>Coffee Molecule</h1>
 
@@ -59,7 +41,7 @@
       </div>
     </div>
     <div class="only-card">
-      <button label="visit">
+      <button class="btn-ext" label="visit">
         <a href="https://coffeemolecule.com" target="_blank">Visit</a>
       </button>
     </div>
@@ -72,11 +54,11 @@
   </section>
 
   <footer>
-    <button label="main">
+    <button class="btn-int" label="main">
       <a href="../index.html">Main</a>
     </button>
-    <button label="contact">
-      <a href="/cont/contact.html">Contact</a>
+    <button class="btn-int" label="contact">
+      <a href="./contact.html">Contact</a>
     </button>
   </footer>
 </body>

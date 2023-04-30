@@ -304,7 +304,15 @@ img {
 }
 
 /* main header  */
-
+.disappear {
+  display: grid;
+  justify-items: center;
+  position: absolute;
+  height: 0;
+  width: 100%;
+  left: 0;
+  top: 0;
+}
 .header {
   display: grid;
   width: 100%;
@@ -328,7 +336,6 @@ img {
   top: -14rem;
   width: 166%;
   height: 24rem;
-  /* background: linear-gradient(0deg, rgba(255, 255, 255, 0) 7%, var(--whitest-88)); */
 
   background: radial-gradient(
     rgba(var(--back-color), 1) 0%,
@@ -670,7 +677,7 @@ img {
 
   justify-items: center;
   justify-content: center;
-  margin: 2rem 0 2rem 0;
+  margin: 5rem 0;
 
   padding: 0px;
 }
@@ -692,7 +699,7 @@ img {
   background-color: var(--panel-back);
   border: var(--border);
 
-  box-shadow: var(--shadow-box1);
+  /* box-shadow: var(--shadow-box1); */
 
   transition: all ease-out 0.9s;
 

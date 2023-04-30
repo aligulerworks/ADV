@@ -2,41 +2,15 @@
 <html lang="eng">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="./docs/style.css" />
+  <!-- head for home  -->
+  <script src="components/head-tag-home.js" type="text/javascript" defer></script>
+  <head-tag-home></head-tag-home>
+  <!-- end - head for home -->
 
-  <!-- Fonts - Google  -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
-    rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@300;400;600&display=swap" rel="stylesheet" />
-
-  <!-- favicon  -->
-  <link rel="icon" type="image/svg+xml" href="/images/favicon-alidelvento.svg" />
-
-  <!-- Google Tag Manager -->
-  <script>
-    (function (w, d, s, l, i) {
-      w[l] = w[l] || [];
-      w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
-      var f = d.getElementsByTagName(s)[0],
-        j = d.createElement(s),
-        dl = l != 'dataLayer' ? '&l=' + l : '';
-      j.async = true;
-      j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-      f.parentNode.insertBefore(j, f);
-    })(window, document, 'script', 'dataLayer', 'GTM-MDTH6X7');
-  </script>
-  <!-- End Google Tag Manager -->
-
+  <!-- JS SCRIPTS -->
   <script defer src="./docs/script.js"></script>
+  <script defer src="components/header.js" type="text/javascript"></script>
 
-
-  <title>ali del vento</title>
 </head>
 
 <body>
@@ -46,18 +20,7 @@
       style="display: none; visibility: hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
   <!-- HEADER  -->
-
-  <header class="header">
-    <div class="header-title">
-      <h2><a href="./index.html">ali del vento</a></h2>
-    </div>
-    <div class="header-line"></div>
-    <div class="header-subtitle">
-      <h6 class="header-subtitle-left">Personal</h6>
-      <div class="header-sub-triangle"></div>
-      <h6 class="header-subtitle-right">Portfolio</h6>
-    </div>
-  </header>
+  <header-component class="disappear"></header-component>
 
   <h1>n'aber</h1>
   <div class="background">
@@ -103,7 +66,7 @@
         <h4>website</h4>
         <h5>(UNDER DEVELOPMENT)</h5>
       </div>
-      <a href="./cont/read-verylucky.html"><button class="btn-int" type="button">read</button></a>
+      <a href="./components/read-veryluckycraftshop.html"><button class="btn-int" type="button">read</button></a>
     </div>
 
     <!-- BELOVED MEMORIES  -->
@@ -115,7 +78,7 @@
         <h4>website</h4>
 
       </div>
-      <a href="./cont/read-memories.html"><button class="btn-int" type="button">read</button></a>
+      <a href="./components/read-memories.html"><button class="btn-int" type="button">read</button></a>
     </div>
 
     <!-- SEND MY POST  -->
@@ -128,7 +91,7 @@
 
         <!-- <p class="card-subh">website</p> -->
       </div>
-      <a href="./cont/read-sendmypost.html"><button class="btn-int" type="button">read</button></a>
+      <a href="./components/read-sendmypost.html"><button class="btn-int" type="button">read</button></a>
     </div>
 
     <div class="works-card mobile-hidden">
@@ -149,7 +112,7 @@
         </h3>
         <h4>Tarot Website Example</h4>
       </div>
-      <a href="./cont/read-thefool.html"><button class="btn-int" type="button">read</button></a>
+      <a href="./components/read-thefool.html"><button class="btn-int" type="button">read</button></a>
     </div>
 
     <!-- ART BY CEYLAN INSEL  -->
@@ -161,7 +124,7 @@
         <h4>website</h4>
         <!-- <p class="card-subh">website</p> -->
       </div>
-      <a href="./cont/read-artbyceylaninsel.html"><button class="btn-int" type="button">read</button></a>
+      <a href="./components/read-artbyceylaninsel.html"><button class="btn-int" type="button">read</button></a>
     </div>
 
     <!-- CRYPTO COFFEE  -->
@@ -174,7 +137,7 @@
 
         <!-- <p class="card-subh">website</p> -->
       </div>
-      <a href="./cont/read-kriptokahve.html"><button class="btn-int" type="button">read</button></a>
+      <a href="./components/read-cryptocoffee.html"><button class="btn-int" type="button">read</button></a>
     </div>
 
     <div class="works-card mobile-hidden">
@@ -194,7 +157,7 @@
         <h4>website</h4>
         <!-- <p class="card-subh">website</p> -->
       </div>
-      <a href="./cont/read-coffeemolecule.html"><button class="btn-int" type="button">read</button></a>
+      <a href="./components/read-coffeemolecule.html"><button class="btn-int" type="button">read</button></a>
     </div>
 
     <!-- ROMAN VS DIGITAL  -->
@@ -275,9 +238,10 @@
 
   </section>
 
+
   <footer>
-    <a href="./cont/contact.html"><button class="btn-int" label="contact">contact</button></a>
-    <a href="./cont/about.html"><button class="btn-int" label="about">about</button></a>
+    <a href="./components/contact.html"><button class="btn-int" label="contact">contact</button></a>
+    <a href="./components/about.html"><button class="btn-int" label="about">about</button></a>
 
   </footer>
 </body>
