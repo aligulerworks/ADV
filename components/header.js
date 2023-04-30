@@ -1,6 +1,7 @@
 const headerTemplate = document.createElement("template");
 
 headerTemplate.innerHTML = `
+<link rel="stylesheet" href="./style.css" />
 <link rel="stylesheet" href="../style.css" />
 
 
