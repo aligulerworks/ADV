@@ -1,7 +1,13 @@
 const headTagHome = document.createElement("template");
 
-headTagHome.innerHTML = `
-  <meta charset="UTF-8" />
+class HeadTagHome extends HTMLElement {
+  constructor() {
+    super();
+  }
+
+  connectedCallback() {
+    this.innerHTML = `
+    <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -37,6 +43,8 @@ headTagHome.innerHTML = `
 
 
   <title>ali del vento</title>
-`;
+    `;
+  }
+}
 
-document.head.appendChild(headTagHome.content);
+customElements.define("head-tag-home-component", HeadTagHome);
