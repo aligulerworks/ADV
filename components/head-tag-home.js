@@ -1,13 +1,5 @@
-const headTagHome = document.createElement("template");
-
-class HeadTagHome extends HTMLElement {
-  constructor() {
-    super();
-  }
-
-  connectedCallback() {
-    this.innerHTML = `
-    <meta charset="UTF-8" />
+const headTagHome = `
+  <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -43,8 +35,9 @@ class HeadTagHome extends HTMLElement {
 
 
   <title>ali del vento</title>
-    `;
-  }
-}
+`;
 
-customElements.define("head-tag-home-component", HeadTagHome);
+// document.getElementsByTagName("head")[0].appendChild(headTagHome);
+document.head.innerHTML = document.head.innerHTML + headTagHome;
+
+// document.head.appendChild(headTagHome.content);
