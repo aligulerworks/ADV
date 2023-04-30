@@ -137,14 +137,17 @@ function backChanger() {
 function backgroundToggler() {
   const mainBackground = document.querySelector(".background");
   const wholePageItems = document.querySelector("#page");
+  const photoBy = document.querySelector(".photo-by");
   const showBack = () => {
     wholePageItems.style.setProperty("opacity", "1");
     mainBackground.style.setProperty("opacity", "0.33");
+    photoBy.style.setProperty("opacity", "0");
   };
 
   const hideBack = () => {
     wholePageItems.style.setProperty("opacity", "0");
     mainBackground.style.setProperty("opacity", "1");
+    photoBy.style.setProperty("opacity", "1");
   };
 
   backSwitch.addEventListener("pointerleave", showBack, false);

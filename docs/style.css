@@ -41,7 +41,7 @@
 
   /* transitions */
   --trans-btn: ease-in 200ms;
-  --trans-back: ease-in 400ms;
+  --trans-back: ease-in 800ms;
 
   /* borders  */
   --border: 0.2px solid rgba(var(--back-color), 0.99);
@@ -394,6 +394,22 @@ img {
   object-fit: cover;
   opacity: 0.33;
   transition: var(--trans-back);
+}
+
+.photo-by {
+  position: absolute;
+  right: 1.66rem;
+  bottom: 1.66rem;
+  background: rgba(var(--back-color), 0.44);
+  border-radius: 1rem;
+  padding: 0 1rem;
+  font-style: italic;
+  opacity: 0;
+  transition: var(--trans-back);
+}
+
+.photo-by span {
+  /* font-weight: 400; */
 }
 
 .background-image {
