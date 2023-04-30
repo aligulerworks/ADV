@@ -31,7 +31,7 @@ const headTagHome = `
 
 
   <!-- STYLES  -->
-  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="./style.css" />
 
 
   <title>ali del vento</title>
