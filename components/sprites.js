@@ -1,10 +1,13 @@
-const spritesTemplate = document.createElement("sprites");
+// const spritesTemplate = document.createElement("template");
 
-spritesTemplate.innerHTML = `
-<link rel="stylesheet" href="./style.css" />
-<link rel="stylesheet" href="../style.css" />
+class spritesTemplate extends HTMLElement {
+  constructor() {
+    super();
+  }
+  connectedCallback() {
+    this.innerHTML = `
 
-
+<section class="sprites">
 <button class="btn-int" id="light-switch">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 271.62 271.62">
         <path id="frame" class="frame"
@@ -26,18 +29,8 @@ spritesTemplate.innerHTML = `
       <path class="backswitch" id="mountains" d="M236.14,195.75l-8,8.55,10.28,15.07-46.32-42.85.16-.05a14.57,14.57,0,0,0-17.41,2.92l-16.35,17.42,16.44,24.11L128.6,178.07l.27-.09-33.58-31.5a11.88,11.88,0,0,0-16.78.54L14.77,215A150.21,150.21,0,0,0,122.1,297.4l1.41-1.5,2.29,2.15a150.16,150.16,0,0,0,157.09-78.44l-26.14-24.52A14.57,14.57,0,0,0,236.14,195.75Z"/>
       </svg>
     </button>
-`;
-
-class Header extends HTMLElement {
-  constructor() {
-    super();
-  }
-
-  connectedCallback() {
-    const shadowRoot = this.attachShadow({ mode: "open" });
-
-    shadowRoot.appendChild(spritesTemplate.content);
+    </section>
+    `;
   }
 }
-
-customElements.define("header-component", Header);
+customElements.define("sprites-component", spritesTemplate);
