@@ -819,8 +819,8 @@ footer:before {
   height: 6rem;
   width: 100%;
   background-color: rgba(var(--color), 0.02);
-  -webkit-backdrop-filter: blur(12px);
-  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
   mask-image: -webkit-gradient(
     linear,
     left top,

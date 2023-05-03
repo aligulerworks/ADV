@@ -1,7 +1,6 @@
 "use strict";
 
 // GLOBAL VARIABLES & FUNCTIONS
-
 // PAGE RECOGNIZER
 // const body = document.querySelector("body");
 const getPage = document.querySelector(".page");
