@@ -23,6 +23,15 @@ const currentPage = () => {
   return pageID;
 };
 
+// DIRECTORY FIXER
+let styleDirectory;
+let homeDirectory;
+if (currentPage() === "home") {
+  styleDirectory = `./`;
+} else {
+  styleDirectory = `../`;
+}
+
 // wait until DOM is ready
 document.addEventListener("DOMContentLoaded", function (event) {
   console.log("DOM loaded");
@@ -140,9 +149,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
           return picNumber;
         };
         console.log(`Pick one pic numter is ${pickOne()}`);
-        document.getElementById("back-image").src = `../images/backs-ali/${
-          backList[pickOne()]
-        }`;
+        document.getElementById(
+          "back-image"
+        ).src = `${styleDirectory}images/backs-ali/${backList[pickOne()]}`;
       }
 
       function backgroundToggler() {

@@ -1,11 +1,3 @@
-let styleDirectory;
-let homeDirectory;
-if (currentPage() === "home") {
-  styleDirectory = `./`;
-} else {
-  styleDirectory = `../`;
-}
-
 const headerTemplate = document.createElement("template");
 headerTemplate.innerHTML = `
 <link rel="stylesheet" href="${styleDirectory}style.css" />
