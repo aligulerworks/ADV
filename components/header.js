@@ -1,13 +1,18 @@
+let styleDirectory;
+let homeDirectory;
+if (currentPage() === "home") {
+  styleDirectory = `./`;
+} else {
+  styleDirectory = `../`;
+}
+
 const headerTemplate = document.createElement("template");
-
 headerTemplate.innerHTML = `
-<link rel="stylesheet" href="./style.css" />
-<link rel="stylesheet" href="../style.css" />
-
+<link rel="stylesheet" href="${styleDirectory}style.css" />
 
 <header class="header">
 <div class="header-title">
-  <h2><a href="./index.html">ali güler works</a></h2>
+  <h2><a href="../index.html">ali güler works</a></h2>
 </div>
 <div class="header-line"></div>
 <div class="header-subtitle">

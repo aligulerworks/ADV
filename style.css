@@ -45,8 +45,8 @@
   --trans-back: ease-in 800ms;
 
   /* borders  */
-  --border: 0.2px solid rgba(var(--back-color), 0.99);
-  --border-hov: 0.2px solid rgba(var(--color), 0.44);
+  --border: 1px solid rgba(var(--back-color), 0.99);
+  --border-hov: 1px solid rgba(var(--color), 0.44);
   --panel-back: rgba(var(--shade), 0.44);
   --panel-back-hov: rgba(var(--shade), 0.55);
 }
@@ -114,20 +114,22 @@ em {
   font-size: inherit;
 }
 h1 {
-  font-size: 2rem;
-  font-weight: 200;
   opacity: 0;
-  position: absolute;
+  pointer-events: none;
+  z-index: 10;
+  font-weight: 200;
+  position: fixed;
+  top: 3.8rem;
   line-height: auto;
   display: grid;
-  justify-content: center;
-  align-items: center;
-  height: 62vh;
-  z-index: -1;
-  position: fixed;
-  transform: rotate(-10deg);
-
+  justify-content: stretch;
+  align-items: stretch;
+  height: auto;
+  width: 12rem;
+  transform: rotate(0deg);
   margin: 0;
+  text-align: center;
+  background: rgba(var(--back-color), 1);
 }
 
 h2 {
@@ -408,9 +410,10 @@ img {
   position: absolute;
   right: 1.66rem;
   bottom: 1.66rem;
-  background: rgba(var(--back-color), 0.44);
+  background: rgba(var(--back-color), 0.77);
   border-radius: 1rem;
-  padding: 0 1rem;
+  padding: 0 0.8rem;
+  font-size: 0.8rem;
   font-style: italic;
   opacity: 0;
   transition: var(--trans-back);
@@ -418,6 +421,7 @@ img {
 
 .photo-by span {
   /* font-weight: 400; */
+  font-size: 0.8rem;
 }
 
 .background-image {
@@ -607,7 +611,7 @@ img {
 
 /* PAGE: ABOUT  */
 
-#page {
+.page {
   transition: var(--trans-back);
 }
 
@@ -803,6 +807,34 @@ footer {
   gap: 1rem;
   grid-template-columns: repeat(auto-fit, 5rem);
   grid-auto-flow: column;
+  transition: var(--trans-back);
+}
+
+footer:before {
+  pointer-events: none;
+  z-index: -1;
+  content: "";
+  position: absolute;
+  bottom: -0.5rem;
+  height: 6rem;
+  width: 100%;
+  background-color: rgba(var(--color), 0.02);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  mask-image: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(rgba(0, 0, 0, 0)),
+    to(rgba(0, 0, 0, 1))
+  );
+  -webkit-mask-image: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(rgba(0, 0, 0, 0)),
+    to(rgba(0, 0, 0, 1))
+  );
 }
 
 /* MOBILE  */

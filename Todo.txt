@@ -2,3 +2,6 @@
 - On plan ile arka plan arasindaki kontrasti gozden gecir. Arkaplan gorselleri ile yazilari daha iyi ayir.
 - Bunlarin hepsini kendi fotograflarini ekledikten sonra yap.
 - external link oku'nu illustrator'de ciz.
+
+- bittiginde, repo'yu clone'la ve url'yi degistir (ya da clone'lamadan degistir, which is better)
+- 

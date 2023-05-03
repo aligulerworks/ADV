@@ -1,4 +1,16 @@
-// const spritesTemplate = document.createElement("template");
+class bgRevealer extends HTMLElement {
+  constructor() {
+    super();
+  }
+
+  connectedCallback() {
+    this.innerHTML = `
+    <div class="background">
+    <img src="" alt="Background Picture" class="background-image" id="back-image" />
+    <p class="photo-by">Photo: <span>Ali Murat Güler</span></p>
+    </div>`;
+  }
+}
 
 class spritesTemplate extends HTMLElement {
   constructor() {
@@ -34,3 +46,4 @@ class spritesTemplate extends HTMLElement {
   }
 }
 customElements.define("sprites-component", spritesTemplate);
+customElements.define("bg-revealer-component", bgRevealer);
